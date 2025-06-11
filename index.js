@@ -6,9 +6,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
 
-app.use(express.static("assets"))
-app.use(express.static("css"))
-app.use(express.static("js"))
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use("/assets", express.static("assets"))
+app.use("/css", express.static("css"))
+app.use("/js", express.static("js"))
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
