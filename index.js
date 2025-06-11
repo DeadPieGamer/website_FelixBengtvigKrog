@@ -6,10 +6,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
 
-app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
-app.use("/assets", express.static("assets"))
-app.use("/css", express.static("css"))
-app.use("/js", express.static("js"))
+app.use("/jquery", express.static(__dirname + "/node_modules/jquery/dist/"));
+app.use("/assets", express.static("assets"));
+app.use("/css", express.static("css"));
+app.use("/js", express.static("js"));
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
@@ -20,15 +20,15 @@ app.get("/resume", (req, res) => {
 });
 
 app.get("/projects", (req, res) => {
-  res.sendFile(__dirname + "/public/projects/projects.html");
+  res.sendFile(__dirname + "/public/projects.html");
 });
 
 app.get("/projects/personal/retrace", (req, res) => {
   res.sendFile(__dirname + "/public/projects/personal/retrace.html");
 });
 
-app.get("/projects/uni/fingerspelling", (req, res) => {
-  res.sendFile(__dirname + "/public/projects/uni/fingerspelling.html");
+app.get("/projects/personal/web-game", (req, res) => {
+  res.sendFile(__dirname + "/public/projects/personal/web-game.html");
 });
 
 app.get("/projects/uni/killeronboard", (req, res) => {
@@ -39,18 +39,15 @@ app.get("/projects/uni/ordhandel", (req, res) => {
   res.sendFile(__dirname + "/public/projects/uni/ordhandel.html");
 });
 
-app.get("/projects", (req, res) => {
-  res.sendFile(__dirname + "/public/projects/projects.html");
-});
-
-app.get("/404", (req, res) => {
-  res.sendFile(__dirname + "/public/404.html");
+app.get("/projects/uni/fingerspelling", (req, res) => {
+  res.sendFile(__dirname + "/public/projects/uni/fingerspelling.html");
 });
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-app.use( (req, res, send) => {
-  res.redirect("/404");
-})
+// If trying to reach a url that does not exist (ie not any of the above ones), instead go to the 404 page
+app.use((req, res, send) => {
+  res.sendFile(__dirname + "/public/404.html");
+});
