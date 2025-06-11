@@ -1,0 +1,37 @@
+/* Gradient animation by Manuel Pinto: https://codepen.io/P1N2O/pen/pyBNzX */
+.gradient-background {
+  background: linear-gradient(300deg, #321325, #C69C0D, #5F0F40);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fraction-12-grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.game-title{
+    font-size: 100px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+@media (max-width: 992px){
+    .game-title{
+        font-size: 50px;
+    }
+}

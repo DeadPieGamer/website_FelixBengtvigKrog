@@ -1,0 +1,17 @@
+{
+  "name": "website_felixbengtvigkrog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Felix Bengtvig Krog",
+  "license": "ISC",
+  "description": "Project for Web Development course, also may serve as portfolio in the future",
+  "dependencies": {
+    "express": "^5.1.0",
+    "jquery": "^3.7.1"
+  }
+}
