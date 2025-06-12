@@ -1,8 +1,8 @@
 /* Gradient animation by Manuel Pinto: https://codepen.io/P1N2O/pen/pyBNzX */
 .gradient-background {
-  background: linear-gradient(300deg, #321325, #c69c0d, #5f0f40);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
+  background: linear-gradient(-60deg, #321325, #c69c0d, #5f0f40);
+  background-size: 200% 200%;
+  animation: gradient-animation 40s ease infinite;
 }
 
 @keyframes gradient-animation {
