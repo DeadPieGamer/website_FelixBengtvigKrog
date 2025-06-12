@@ -14,6 +14,7 @@
     />
 
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/ttt-style.css" />
   </head>
   <body>
     <div id="header"></div>
@@ -30,10 +31,43 @@
     <div class="container my-3">
       <div class="text-center justify-content-center">
         <h2 class="mb-3">Try it out!</h2>
-        <button id="game-start-button" class="btn btn-lg btn-outline-light">
-          Play in browser
+        <button id="ttt-reset-button" class="ttt-reset-button btn btn-lg btn-outline-light">
+          Reset game
         </button>
-        <div id="gameplay-frame"></div>
+      </div>
+      <div class="row text-center justify-content-center my-3">
+        <div
+          class="ttt-grid col-xl-6 col-lg-7 col-md-9 col-10"
+          id="gameplay-frame"
+        >
+          <div class="ttt-box ttt-r1 ttt-c1">
+            <img class="d-none" src="" alt="" />
+          </div>
+          <div class="ttt-box ttt-r1 ttt-c2">
+            <img class="d-none" src="" alt="" />
+          </div>
+          <div class="ttt-box ttt-r1 ttt-c3">
+            <img class="d-none" src="" alt="" />
+          </div>
+          <div class="ttt-box ttt-r2 ttt-c1">
+            <img class="d-none" src="" alt="" />
+          </div>
+          <div class="ttt-box ttt-r2 ttt-c2">
+            <img class="d-none" src="" alt="" />
+          </div>
+          <div class="ttt-box ttt-r2 ttt-c3">
+            <img class="d-none" src="" alt="" />
+          </div>
+          <div class="ttt-box ttt-r3 ttt-c1">
+            <img class="d-none" src="" alt="" />
+          </div>
+          <div class="ttt-box ttt-r3 ttt-c2">
+            <img class="d-none" src="" alt="" />
+          </div>
+          <div class="ttt-box ttt-r3 ttt-c3">
+            <img class="d-none" src="" alt="" />
+          </div>
+        </div>
       </div>
     </div>
 
@@ -43,11 +77,19 @@
         <div class="col-lg-7">
           <h2>Premise</h2>
           <p>
-            Web-game (wip) is a short game, made so that I could try out what I knew
-            about js and web stuff.
+            Web-game (wip) is a small tic-tac-toe game, made so that I could try
+            out some different js stuff. The only sources of help while making
+            this were the documentations of the different libraries and
+            frameworks used.
           </p>
           <p>
-            This is the only place where you can play it. Hope you'll enjoy! :D
+            Only move is allowed every five minutes. Every player shares the
+            same board and moves. Hope you'll enjoy! :D
+            <small
+              >(given this being a locally run site, and not accessible online,
+              this effectively just means you have to wait 5 minutes between
+              each move. The board is stored between sessions though)</small
+            >
           </p>
         </div>
 
@@ -100,16 +142,16 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img
-                  src="/assets/images/temp-for-assignment/placeholder-image.png"
-                  alt="A placeholder image"
+                  src="/assets/images/projects/personal/web-game/web-game-grid.jpg"
+                  alt="A three by three grid"
                   class="bd-placeholder-img"
                   width="100%"
                 />
               </div>
               <div class="carousel-item">
                 <img
-                  src="/assets/images/temp-for-assignment/placeholder-image.png"
-                  alt="A placeholder image"
+                  src="/assets/images/projects/personal/web-game/web-game-tooquick.jpg"
+                  alt="Tic-tac-toe with a warning stating the player moved too quickly"
                   class="bd-placeholder-img"
                   width="100%"
                 />
@@ -155,7 +197,7 @@
     <!-- jQuery to make js a bunch easier to write -->
     <script src="/jquery/jquery.min.js"></script>
     <script src="/js/getHeaderAndFooter.js"></script>
-    <script src="/js/browserPlay.js"></script>
+    <script type="module" src="/js/ttt-script.js"></script>
 
     <!-- Bootstrap frontend library JS stuffs -->
     <script

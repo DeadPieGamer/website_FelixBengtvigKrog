@@ -1,6 +1,6 @@
 /* Gradient animation by Manuel Pinto: https://codepen.io/P1N2O/pen/pyBNzX */
 .gradient-background {
-  background: linear-gradient(300deg, #321325, #C69C0D, #5F0F40);
+  background: linear-gradient(300deg, #321325, #c69c0d, #5f0f40);
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
 }
@@ -17,21 +17,36 @@
   }
 }
 
-.fraction-12-grid{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
-    gap: 20px;
+.no-dot-ul {
+  list-style-type: none;
 }
 
-.game-title{
-    font-size: 100px;
-    text-transform: uppercase;
-    font-weight: 600;
+.fraction-12-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
 }
 
-@media (max-width: 992px){
-    .game-title{
-        font-size: 50px;
-    }
+.fraction-2x-any-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
+.game-title {
+  font-size: 100px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .game-title {
+    font-size: 50px;
+  }
+}
+
+.carousel-item > img {
+  aspect-ratio: 1.26;
+  object-fit: contain;
 }
