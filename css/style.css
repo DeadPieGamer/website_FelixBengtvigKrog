@@ -55,3 +55,7 @@
   aspect-ratio: 1.26;
   object-fit: cover;
 }
+
+.video-aspect {
+  aspect-ratio: 16/9;
+}
