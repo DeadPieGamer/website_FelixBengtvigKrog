@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# The current state of the tic-tac-toe game
+assets/game-demos/tic-tac-toe/game-board.json
