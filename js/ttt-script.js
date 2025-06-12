@@ -86,8 +86,7 @@ async function doMove(whichBox) {
     })
     .always(() => {
       // If enough time hasn't passed, return
-      let timeDif =
-        currentGameBoard.lastMoment - currentTime;
+      let timeDif = currentGameBoard.lastMoment - currentTime;
 
       timeDif += timeBetweenMoves;
 
@@ -95,7 +94,7 @@ async function doMove(whichBox) {
         "I am at time: " +
           currentTime +
           ", which is " +
-          (timeDif) +
+          timeDif +
           " timeDif. With timeBetweenMoves added: " +
           (timeDif + timeBetweenMoves)
       );
@@ -105,12 +104,23 @@ async function doMove(whichBox) {
           `You moved too quickly! There's still: ${Math.floor(
             timeDif / 60.0 / 1000.0
           )} minutes and ${Math.floor(
-            timeDif / 1000.0 % 60
+            (timeDif / 1000.0) % 60
           )} seconds left until the next possible move.`
         );
         return;
       }
 
+      let boxCoordinates = figureOutBox(whichBox);
+
+      // Check if move is allowed
+      if (
+        currentGameBoard.row[boxCoordinates[0]].column[boxCoordinates[1]] !== ""
+      ) {
+        alert("Cannot make a move on a filled square");
+        return;
+      }
+
+      // Make image an x or o
       let imageBox = whichBox.children();
       imageBox.attr(
         "src",
@@ -118,8 +128,6 @@ async function doMove(whichBox) {
       );
       imageBox.attr("alt", currentGameBoard.nextMove);
       imageBox.removeClass("d-none");
-
-      let boxCoordinates = figureOutBox(whichBox);
 
       currentGameBoard.row[boxCoordinates[0]].column[boxCoordinates[1]] =
         currentGameBoard.nextMove;
@@ -137,9 +145,7 @@ function saveBoard(boardObj) {
 
 function loadBoard() {
   let currentGameBoard = new TttBoard();
-
-  // let boardRequest = $.get("/projects/personal/web-game/current");
-
+ 
   $.get("/projects/personal/web-game/current", (data) => {
     let parsedData = JSON.parse(data);
 
